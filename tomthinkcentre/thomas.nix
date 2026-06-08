@@ -41,6 +41,14 @@ in
   };
 
 
+  # Hyprshot
+  # =========
+  programs.hyprshot = {
+    enable = true;
+    saveLocation = "$HOME/Pictures";
+  };
+
+
   # Neovim
   # =======
   programs.neovim = {
@@ -90,6 +98,9 @@ in
     lua
     nasm
     python3
+   # Hyprland
+   # =========
+    hyprpaper
    # Tools
    # ======
     tree

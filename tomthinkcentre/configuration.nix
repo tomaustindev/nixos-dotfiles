@@ -90,6 +90,10 @@
    # Tools
    # ======
     wget
+   # XDG & Wayland
+   # ==============
+    xdg-user-dirs
+    wl-clipboard
   ];
 
   fonts.packages = with pkgs; [
