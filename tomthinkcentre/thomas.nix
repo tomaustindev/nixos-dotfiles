@@ -75,6 +75,14 @@ in
   services.ssh-agent.enable = true;
 
 
+  # Waybar
+  # =======
+  programs.waybar.enable = true;
+  xdg.configFile."waybar" = {
+    source = create_symlink "${dotfiles}/waybar";
+  };
+
+
   # Yazi
   # =====
   programs.yazi = {
