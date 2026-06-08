@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  dotfiles = "${config.home.homeDirectory}/dotfiles";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+in
+
 {
   home.username = "thomas";
   home.homeDirectory = "/home/thomas";
@@ -13,7 +18,6 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#tomthinkcentre";
     };
-
     initExtra = ''
       export PS1='[\[\e[91m\]\T\[\e[0m\]]: \[\e[36m\]\u\[\e[0m\] in \[\e[94m\]\w\[\e[0m\] \\$ '
       export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent"
@@ -45,6 +49,17 @@
     };
   };
   services.ssh-agent.enable = true;
+
+
+  # Yazi
+  # =====
+  programs.yazi = {
+    enable = true;
+    shellWrapperName = "y";
+  };
+  xdg.configFile."yazi" = {
+    source = create_symlink "${dotfiles}/yazi";
+  };
 
 
   home.packages = with pkgs; [

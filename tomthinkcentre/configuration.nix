@@ -90,6 +90,10 @@
     wget
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
   system.stateVersion = "25.11"; # DO NOT CHANGE!
 
 }
