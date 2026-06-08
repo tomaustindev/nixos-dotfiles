@@ -1,11 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
+  # flakes
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  # systemd-boot setup
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
