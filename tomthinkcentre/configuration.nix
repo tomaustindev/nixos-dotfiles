@@ -67,6 +67,7 @@
   environment.systemPackages = with pkgs; [
    # Coding
    # =======
+    git
     vim # (fallback)
    # Terminal
    # =========
