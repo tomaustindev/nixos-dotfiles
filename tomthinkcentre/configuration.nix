@@ -3,6 +3,15 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
+  # nvidia
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
   # flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -64,6 +73,7 @@
 
  # Packages
  # =========
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
    # Coding
    # =======
