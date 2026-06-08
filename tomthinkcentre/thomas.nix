@@ -25,6 +25,22 @@ in
   };
 
 
+  # Foot
+  # =====
+  programs.foot.enable = true;
+  xdg.configFile."foot" = {
+    source = create_symlink "${dotfiles}/foot";
+  };
+
+
+  # Fuzzel
+  # =======
+  programs.fuzzel.enable = true;
+  xdg.configFile."fuzzel" = {
+    source = create_symlink "${dotfiles}/fuzzel";
+  };
+
+
   # Neovim
   # =======
   programs.neovim = {
