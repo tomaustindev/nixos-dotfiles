@@ -37,6 +37,9 @@
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
+  # display manager
+  services.displayManager.ly.enable = true;
+
   # greeter
   # services.greetd = {
   #   enable = true;
@@ -48,7 +51,6 @@
   # };
 
   # hyprland
-  services.displayManager.sddm.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
