@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, zen-browser, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -76,6 +76,9 @@
  # =========
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+   # Browsing
+   # =========
+    zen-browser.packages."${stdenv.hostPlatform.system}".default
    # Coding
    # =======
     vim # (fallback)
