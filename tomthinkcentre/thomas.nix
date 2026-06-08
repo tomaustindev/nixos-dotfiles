@@ -13,7 +13,7 @@
     pkgs.tree
   ];
   
-  home.sessionVariable = {
+  home.sessionVariables = {
     EDITOR = "nvim";
   };
 
