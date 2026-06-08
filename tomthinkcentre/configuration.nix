@@ -38,16 +38,17 @@
   i18n.defaultLocale = "en_GB.UTF-8";
 
   # greeter
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        user = "greeter";
-      };
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
 
   # hyprland
+  services.displayManager.sddm.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
