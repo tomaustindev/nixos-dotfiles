@@ -30,6 +30,13 @@ in
   programs.bat.enable = true;
 
 
+  # Flavours
+  # =========
+  xdg.configFile."flavours" = {
+    source = create_symlink "${dotfiles}/flavours";
+  };
+
+
   # Foot
   # =====
   programs.foot.enable = true;
