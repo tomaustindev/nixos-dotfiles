@@ -61,10 +61,8 @@ in
 
   # Neovim
   # =======
-  programs.neovim = {
-    enable = true;
-    withRuby = false;
-    withPython3 = false;
+  xdg.configFile."nvim" = {
+    source = create_symlink "${dotfiles}/nvim";
   };
 
 
@@ -124,6 +122,11 @@ in
    # Hyprland
    # =========
     hyprpaper
+   # Neovim
+   # =======
+    fd
+    neovim
+    ripgrep
    # System Info
    # ============
     btop
