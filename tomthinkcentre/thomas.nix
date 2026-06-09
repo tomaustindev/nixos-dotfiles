@@ -58,6 +58,13 @@ in
   home.file.".gitconfig".source = create_symlink "${dotfiles}/.gitconfig";
 
 
+  # Hyprland
+  # =========
+  xdg.configFile."hypr" = {
+    source = create_symlink "${dotfiles}/hypr";
+  };
+
+
   # Hyprshot
   # =========
   programs.hyprshot = {
