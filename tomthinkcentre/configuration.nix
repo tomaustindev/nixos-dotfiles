@@ -101,10 +101,12 @@ in
    # Tools
    # ======
     freac
+    playerctl
     wget
    # XDG & Wayland
    # ==============
     xdg-user-dirs
+    wev
     wl-clipboard
   ];
 
