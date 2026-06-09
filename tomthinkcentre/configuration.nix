@@ -1,5 +1,15 @@
 { config, lib, pkgs, zen-browser, ... }:
 
+let 
+  grub2-themes-bsol = pkgs.stdenv.mkDerivation {
+    name = "bsol";
+    src = builtins.fetchGit {
+      url = "https://github.com/harishnkr/bsol.git";
+      rev = "afcc66069d104e4c02bc962e6bebd9c453c0f163";
+    };
+    installPhase = "cp -r ./bsol $out";
+  };
+in
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -22,6 +32,7 @@
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
+    theme = grub2-themes-bsol;
   };
 
   # connection
@@ -56,11 +67,8 @@
     xwayland.enable = true;
   };
 
-  # X11
-  services.xserver = {
-    enable = true;
-    xkb.layout = "gb";
-  };
+  # X11 (fallback)
+  services.xserver.enable = true;
 
   # audio
   services.pipewire = {
@@ -78,6 +86,9 @@
  # =========
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+   # Aesthetics
+   # ===========
+    flavours
    # Browsing
    # =========
     zen-browser.packages."${stdenv.hostPlatform.system}".default
@@ -89,6 +100,7 @@
     alacritty # (fallback)
    # Tools
    # ======
+    freac
     wget
    # XDG & Wayland
    # ==============

@@ -25,6 +25,11 @@ in
   };
 
 
+  # Bat
+  # ====
+  programs.bat.enable = true;
+
+
   # Foot
   # =====
   programs.foot.enable = true;
@@ -39,6 +44,11 @@ in
   xdg.configFile."fuzzel" = {
     source = create_symlink "${dotfiles}/fuzzel";
   };
+
+
+  # Git
+  # ====
+  home.file.".gitconfig".source = create_symlink "${dotfiles}/.gitconfig";
 
 
   # Hyprshot
@@ -94,6 +104,11 @@ in
   };
 
 
+  # Zathura
+  # ========
+  programs.zathura.enable = true;
+
+
   home.packages = with pkgs; [
    # Coding
    # =======
@@ -109,8 +124,17 @@ in
    # Hyprland
    # =========
     hyprpaper
+   # System Info
+   # ============
+    btop
+    fastfetch
+   # Terminal
+   # =========
+    tmux
+    tmuxifier
    # Tools
    # ======
+    bluetui
     tree
   ];
   
