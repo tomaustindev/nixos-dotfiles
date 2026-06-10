@@ -100,6 +100,7 @@ in
     alacritty # (fallback)
    # Tools
    # ======
+    brightnessctl
     freac
     playerctl
     wget
