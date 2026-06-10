@@ -62,6 +62,10 @@ in
 
   # Hyprland
   # =========
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = false;
+  };
   xdg.configFile."hypr" = {
     source = create_symlink "${dotfiles}/hypr";
   };

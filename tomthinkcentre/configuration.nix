@@ -49,21 +49,15 @@ in
   i18n.defaultLocale = "en_GB.UTF-8";
 
   # display manager
-  services.displayManager.ly.enable = true;
-
-  # greeter
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       user = "greeter";
-  #     };
-  #   };
-  # };
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
   # hyprland
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
   };
 
