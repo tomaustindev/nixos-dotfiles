@@ -27,7 +27,7 @@
           home-manager = {
             useGlobalPkgs = true;
 	    useUserPackages = true;
-	    users.thomas = import ./tomthinkcentre/thomas.nix;
+	    users.thomas = import ./tomthinkcentre/thomas/home.nix;
 	    backupFileExtension = "backup";
 	  };
 	}

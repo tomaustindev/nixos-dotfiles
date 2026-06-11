@@ -11,6 +11,9 @@ in
   home.stateVersion = "25.11";
 
 
+  imports = [ ./programs/git.nix ];
+
+
   # Bash
   # =====
   programs.bash = {
@@ -50,13 +53,6 @@ in
   programs.fuzzel.enable = true;
   xdg.configFile."fuzzel" = {
     source = create_symlink "${dotfiles}/fuzzel";
-  };
-
-
-  # Git
-  # ====
-  home.file.".gitconfig" = {
-    source = create_symlink "${dotfiles}/.gitconfig";
   };
 
 
@@ -132,7 +128,6 @@ in
     cmake
     gcc
     gdb
-    git
     gnumake42
     lua
     nasm
