@@ -14,6 +14,8 @@ in
   imports = [ 
     ./programs/bash.nix
     ./programs/git.nix
+    ./programs/ssh.nix
+    ./services/ssh.nix
   ];
 
 
@@ -67,23 +69,6 @@ in
   xdg.configFile."nvim" = {
     source = create_symlink "${dotfiles}/nvim";
   };
-
-
-  # SSH
-  # ====
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-    settings = {
-      "github.com" = {
-        user = "git";
-        identityFile = "~/.ssh/tomaustindev";
-        identitiesOnly = true;
-        addKeysToAgent = "yes";
-      };
-    };
-  };
-  services.ssh-agent.enable = true;
 
 
   # Waybar
