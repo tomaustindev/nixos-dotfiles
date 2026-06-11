@@ -13,6 +13,7 @@ in
 
   imports = [ 
     ./programs/bash.nix
+    ./programs/foot.nix
     ./programs/git.nix
     ./programs/ssh.nix
     ./services/ssh.nix
@@ -28,14 +29,6 @@ in
   # =========
   xdg.configFile."flavours" = {
     source = create_symlink "${dotfiles}/flavours";
-  };
-
-
-  # Foot
-  # =====
-  programs.foot.enable = true;
-  xdg.configFile."foot" = {
-    source = create_symlink "${dotfiles}/foot";
   };
 
 
