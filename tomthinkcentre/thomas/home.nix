@@ -13,6 +13,7 @@ in
 
   imports = [ 
     ./programs/bash.nix
+    ./programs/fastfetch/fastfetch.nix
     ./programs/foot.nix
     ./programs/git.nix
     ./programs/ssh.nix
@@ -110,7 +111,6 @@ in
    # System Info
    # ============
     btop
-    fastfetch
    # Terminal
    # =========
     tmux
