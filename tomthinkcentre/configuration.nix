@@ -51,20 +51,17 @@ in
   # display manager
   services.displayManager.ly.enable = true;
 
-  # greeter
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       user = "greeter";
-  #     };
-  #   };
-  # };
-
   # hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  # stylix (ricer)
+  stylix = {
+    enable = true;
+    base16Scheme = ./themes/crunchy-forest.yaml;
+    autoEnable = false;
   };
 
   # X11 (fallback)

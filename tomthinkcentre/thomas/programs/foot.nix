@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  c = config.lib.stylix.colors;
+in
+
 {
   programs.foot = {
     enable = true;
@@ -9,26 +13,26 @@
       };
       colors-dark = {
         alpha = "0.9";
-        background = "000f05";
-        foreground = "dbffdb";
-        
-        regular0 = "000f05";
-        regular1 = "694125";
-        regular2 = "236b3e";
-        regular3 = "967e53";
-        regular4 = "62b196";
-        regular5 = "8f8072";
-        regular6 = "409860";
-        regular7 = "c5f09f";
-        
-        bright0 = "0b2a23";
-        bright1 = "f13a44";
-        bright2 = "bfff1c";
-        bright3 = "ffe343";
-        bright4 = "79f6d3";
-        bright5 = "c285de";
-        bright6 = "80c884";
-        bright7 = "dbffdb";
+        background = "${c.base00}";
+        foreground = "${c.base0F}";
+
+        regular0 = "${c.base00}";
+        regular1 = "${c.base01}";
+        regular2 = "${c.base02}";
+        regular3 = "${c.base03}";
+        regular4 = "${c.base04}";
+        regular5 = "${c.base05}";
+        regular6 = "${c.base06}";
+        regular7 = "${c.base07}";
+
+        bright0 = "${c.base08}";
+        bright1 = "${c.base09}";
+        bright2 = "${c.base0A}";
+        bright3 = "${c.base0B}";
+        bright4 = "${c.base0C}";
+        bright5 = "${c.base0D}";
+        bright6 = "${c.base0E}";
+        bright7 = "${c.base0F}";
       };
     };
   };
