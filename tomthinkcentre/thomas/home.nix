@@ -11,21 +11,10 @@ in
   home.stateVersion = "25.11";
 
 
-  imports = [ ./programs/git.nix ];
-
-
-  # Bash
-  # =====
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#tomthinkcentre";
-    };
-    initExtra = ''
-      export PS1='[\[\e[91m\]\T\[\e[0m\]]: \[\e[36m\]\u\[\e[0m\] in \[\e[94m\]\w\[\e[0m\] \\$ '
-      export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent"
-    '';
-  };
+  imports = [ 
+    ./programs/bash.nix
+    ./programs/git.nix
+  ];
 
 
   # Bat
