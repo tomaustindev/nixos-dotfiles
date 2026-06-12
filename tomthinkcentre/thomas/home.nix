@@ -15,6 +15,7 @@ in
     ./programs/bash.nix
     ./programs/fastfetch/fastfetch.nix
     ./programs/foot.nix
+    ./programs/fuzzel.nix
     ./programs/git.nix
     ./programs/ssh.nix
     ./services/ssh.nix
@@ -24,21 +25,6 @@ in
   # Bat
   # ====
   programs.bat.enable = true;
-
-
-  # Flavours
-  # =========
-  xdg.configFile."flavours" = {
-    source = create_symlink "${dotfiles}/flavours";
-  };
-
-
-  # Fuzzel
-  # =======
-  programs.fuzzel.enable = true;
-  xdg.configFile."fuzzel" = {
-    source = create_symlink "${dotfiles}/fuzzel";
-  };
 
 
   # Hyprland

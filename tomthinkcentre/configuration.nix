@@ -60,8 +60,14 @@ in
   # stylix (ricer)
   stylix = {
     enable = true;
-    base16Scheme = ./themes/crunchy-forest.yaml;
     autoEnable = false;
+    base16Scheme = ./themes/crunchy-forest.yaml;
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font Mono";
+      };
+    };
   };
 
   # X11 (fallback)
