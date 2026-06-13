@@ -18,6 +18,7 @@ in
     ./programs/fuzzel.nix
     ./programs/git.nix
     ./programs/ssh.nix
+    ./programs/waybar/waybar.nix
     ./services/ssh.nix
   ];
 
@@ -48,14 +49,6 @@ in
   # =======
   xdg.configFile."nvim" = {
     source = create_symlink "${dotfiles}/nvim";
-  };
-
-
-  # Waybar
-  # =======
-  programs.waybar.enable = true;
-  xdg.configFile."waybar" = {
-    source = create_symlink "${dotfiles}/waybar";
   };
 
 
